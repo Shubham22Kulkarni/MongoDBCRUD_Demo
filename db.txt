@@ -1,0 +1,61 @@
+In cmd one
+C:\Users\Shubham_Kulkarni>mongod
+
+Open new cmd
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use nodedemo;
+switched to db nodedemo
+> db.createCollection("products")
+{ "ok" : 1 }
+> show collections
+products
+> db.products.insert({"p_id":111,"p_name":"p_one","p_cost":10000})
+WriteResult({ "nInserted" : 1 })
+> db.products.insert({"p_id":222,"p_name":"p_two","p_cost":20000})
+WriteResult({ "nInserted" : 1 })
+> db.products.insert({"p_id":333,"p_name":"p_three","p_cost":30000})
+WriteResult({ "nInserted" : 1 })
+> db.products.insert({"p_id":444,"p_name":"p_four","p_cost":40000})
+WriteResult({ "nInserted" : 1 })
+> db.products.insert({"p_id":555,"p_name":"p_five","p_cost":50000})
+WriteResult({ "nInserted" : 1 })
+> db.products.find()
+{ "_id" : ObjectId("6177aec0e1de9bc49492659b"), "p_id" : 111, "p_name" : "p_one", "p_cost" : 10000 }
+{ "_id" : ObjectId("6177aed0e1de9bc49492659c"), "p_id" : 222, "p_name" : "p_two", "p_cost" : 20000 }
+{ "_id" : ObjectId("6177aee0e1de9bc49492659d"), "p_id" : 333, "p_name" : "p_three", "p_cost" : 30000 }
+{ "_id" : ObjectId("6177aeeee1de9bc49492659e"), "p_id" : 444, "p_name" : "p_four", "p_cost" : 40000 }
+{ "_id" : ObjectId("6177aef9e1de9bc49492659f"), "p_id" : 555, "p_name" : "p_five", "p_cost" : 50000 }
+> db.products.find().pretty()
+{
+        "_id" : ObjectId("6177aec0e1de9bc49492659b"),
+        "p_id" : 111,
+        "p_name" : "p_one",
+        "p_cost" : 10000
+}
+{
+        "_id" : ObjectId("6177aed0e1de9bc49492659c"),
+        "p_id" : 222,
+        "p_name" : "p_two",
+        "p_cost" : 20000
+}
+{
+        "_id" : ObjectId("6177aee0e1de9bc49492659d"),
+        "p_id" : 333,
+        "p_name" : "p_three",
+        "p_cost" : 30000
+}
+{
+        "_id" : ObjectId("6177aeeee1de9bc49492659e"),
+        "p_id" : 444,
+        "p_name" : "p_four",
+        "p_cost" : 40000
+}
+{
+        "_id" : ObjectId("6177aef9e1de9bc49492659f"),
+        "p_id" : 555,
+        "p_name" : "p_five",
+        "p_cost" : 50000
+}
